@@ -9,6 +9,7 @@
 Este proyecto es una **aplicación web de e-commerce y gestión administrativa** integral desarrollada como Tarea Académica del curso de Programación 3. Su objetivo fue aplicar los conceptos de **programación en capas**, **arquitectura distribuida** e **integración de servicios web** entre dos stacks tecnológicos principales: **Java** (Backend) y **C#** (Frontend).
 
 El sistema digitaliza el catálogo y la toma de pedidos para el negocio **Campus Store PUQ** (una librería y tienda de artículos variados). Busca **optimizar la gestión de pedidos** y expandir el alcance de la tienda , manteniendo un **trato personalizado** al finalizar la compra.
+Full-stack e-commerce platform developed with Java, C#, REST APIs and MySQL, including user, product, order, inventory and reporting management.
 
 ***
 
