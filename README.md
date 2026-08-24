@@ -1,109 +1,179 @@
+# Campus Store — E-commerce Platform
+
+Full-stack e-commerce web application developed with **Java, C#, REST Web Services and MySQL**, integrating a distributed architecture, business logic, database management, reporting and cloud deployment.
 
+## Overview
 
-# **Sistema Web de E-commerce y Gestión Logística: Campus Store** 🚀
+**Campus Store** is a web-based e-commerce and administrative management system developed as an academic project at PUCP.
 
-***
+The system was designed using a **distributed and layered architecture**, separating the presentation layer from business logic and data persistence.
 
-### **Descripción General del Proyecto**
+The application integrates a **Java backend** exposed through REST Web Services with a **C# frontend**, supported by a relational database and cloud infrastructure.
 
-Este proyecto es una **aplicación web de e-commerce y gestión administrativa** integral desarrollada como Tarea Académica del curso de Programación 3. Su objetivo fue aplicar los conceptos de **programación en capas**, **arquitectura distribuida** e **integración de servicios web** entre dos stacks tecnológicos principales: **Java** (Backend) y **C#** (Frontend).
-
-El sistema digitaliza el catálogo y la toma de pedidos para el negocio **Campus Store PUQ** (una librería y tienda de artículos variados). Busca **optimizar la gestión de pedidos** y expandir el alcance de la tienda , manteniendo un **trato personalizado** al finalizar la compra.
-Full-stack e-commerce platform developed with Java, C#, REST APIs and MySQL, including user, product, order, inventory and reporting management.
-
-***
-
-### **Arquitectura y Tecnologías Core**
-
-La solución está construida bajo una **Arquitectura Distribuida y por Capas** , desacoplando la capa de presentación de la lógica de negocio y la persistencia.
-
-| Componente | Tecnologías Clave | Descripción del Uso |
-| :--- | :--- | :--- |
-| **Backend / API** | **Java**, **Glassfish**, **Web Services REST** | Lógica de negocio robusta, implementada en Java y expuesta mediante una **API RESTful** , desplegada eficientemente en **Glassfish**. |
-| **Frontend / Cliente** | **ASP.NET Framework (Web Forms)**, **C#** | Interfaz de usuario dinámica y estructurada, desarrollada en C#. Consume los servicios REST del backend para orquestar la funcionalidad. |
-| **Persistencia** | **MySQL** | Base de datos relacional para el almacenamiento confiable de toda la información transaccional y maestra. |
-| **Reportes** | **Jasper** | Motor de generación de reportes utilizado para crear informes clave, como Best Sellers y Reporte de Ventas. |
-
-***
-
-### **Funcionalidades Clave y Lógica de Negocio**
-
-El sistema presenta una división de módulos Cliente y Administración con lógica compleja:
-
-* **Flujo de Compra Avanzado (Cliente):**
-    * **Catálogo y Filtros:** Búsqueda avanzada de productos aplicando filtros por título, autor, género o editorial.
-    * **Pago Diferido:** El cliente genera un pedido, asignándole el estado inicial de **"Pendiente de pago"**La transacción final se coordina manualmente notificando a un encargado vía WhatsApp.
-    * **Gestión de Órdenes:** Permite el pago de pedidos pendientes (sin cancelación) y el sistema notifica la realización del abono.
-
-* **Lógica de Pedidos y Stock:**
-    * Al generarse una orden, el sistema descuenta un **stock virtual** de los productos.
-    * **Cancelación Automática:** Se otorga un plazo de **48 horas** para la realización del abono; caso contrario, la orden es **cancelada automáticamente**.
-    * **Restock con Sanción:** Si un pedido no es recogido dentro de **7 días hábiles**, el sistema realiza un restock del producto y se aplica un **reembolso con sanción del 20%**.
-
-* **Funcionalidades del Administrador:**
-    * CRUD completo para la **Gestión de Usuarios** y **Productos**.
-    * Generación de reportes de **Best Sellers** y **Reporte de Ventas** detallando ingresos, descuentos y el ingreso neto.
-
-* **Integración de Servicios:** Se utiliza una **API externa** para la gestión de imágenes (convertidas a URLs) y la integración de **Códigos QR** y **enlaces de WhatsApp** para automatizar el inicio del proceso de pago.
-
-***
-
-### **Habilidades Técnicas Demostradas**
-
-* Dominio del desarrollo **Full-Stack** en un entorno **Multi-Lenguaje** (**Java** y **C#**).
-* Implementación de **Web Services RESTful** y **programación distribuida** para la integración de componentes.
-* Diseño e implementación de **Base de Datos Relacional** (**MySQL**) y lógica transaccional compleja.
-* Manejo de requerimientos no funcionales de **Rendimiento** (50 sesiones simultáneas) y **Seguridad** (HTTPS).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The platform includes customer-facing purchasing functionality as well as administrative tools for managing users, products, orders, inventory and reports.
+
+---
+
+## Architecture
+
+The application follows a distributed and layered architecture:
+
+```text
+┌──────────────────────────────┐
+│       C# Frontend            │
+│      ASP.NET Web Forms       │
+└──────────────┬───────────────┘
+               │
+               │ REST Web Services
+               ▼
+┌──────────────────────────────┐
+│        Java Backend          │
+│     Business Logic + API     │
+│          GlassFish           │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│            MySQL             │
+│       Data Persistence       │
+└──────────────────────────────┘
+
+              AWS
+        ┌───────────────┐
+        │ Cloud Database │
+        │ Virtual Machine│
+        └───────────────┘
+```
+The frontend communicates with the backend through REST Web Services, while the backend handles business logic, data access and interaction with the database.
+
+The application was also deployed using AWS infrastructure, including a cloud database and a virtual machine for application deployment.
+
+## My Contribution
+
+I worked as a Full-Stack Developer within the project.
+
+**My main responsibilities included:**
+
+- Development of the administration module.
+- Implementation of backend functionality and business logic.
+- Development and integration of REST Web Services.
+- Integration between the C# frontend and Java backend.
+- Support for customer-facing functionality.
+- Support for product and order management.
+- Work with database access and persistence components.
+- Integration and deployment of the application using AWS infrastructure.
+
+I also participated in the integration and testing of the different components of the system.
+
+## Key Features
+- Customer Module
+- Product catalog.
+- Product search and filtering.
+- Search by title, author, genre and publisher.
+- Product and stock information.
+- Order creation and management.
+- Payment status tracking.
+- WhatsApp-based payment coordination.
+- QR code integration.
+- Automatic order cancellation according to business rules.
+- Administration Module
+- User management.
+- Product management.
+- Order management.
+- Inventory management.
+- Best Sellers reports.
+- Sales reports.
+- Revenue, discounts and net income information.
+- Business Rules
+
+The system implements several business rules related to orders, payments and inventory.
+
+Stock Management
+
+When an order is created, the system reserves virtual stock for the requested products.
+
+Payment Deadline
+
+Orders that remain pending payment are automatically cancelled after 48 hours if the payment is not completed.
+
+Uncollected Orders
+
+If an order is not collected within 7 business days, the system processes the corresponding restocking and refund rules.
+
+Refund and Penalty
+
+For applicable uncollected orders, the system applies a 20% penalty according to the defined business rules.
+
+## Technologies
+#### Backend
+- Java
+- GlassFish
+- REST Web Services
+#### Frontend
+- C#
+- ASP.NET Web Forms
+**Database**
+- MySQL
+#### Cloud / Deployment
+- AWS
+- Cloud database infrastructure
+- Virtual machine for application deployment
+#### Reporting
+- Jasper Reports
+#### Other Integrations
+- External image service
+- QR codes
+- WhatsApp links
+## Project Structure
+
+The project separates responsibilities into different components, including:
+
+DTO — Data Transfer Objects.
+Business Logic — Application and business rules.
+DB Manager — Database access and persistence.
+Encryption — Data protection and encryption-related functionality.
+REST — REST Web Services used for communication between application components.
+Frontend — C# / ASP.NET Web Forms application.
+Technical Highlights
+Full-stack development using Java and C#.
+Distributed application architecture.
+Layered separation of responsibilities.
+RESTful Web Services.
+Relational database design using MySQL.
+Business logic for orders, payments and inventory.
+User and product management.
+Automated business rules for order processing.
+Report generation using Jasper Reports.
+Cloud deployment using AWS infrastructure.
+Integration between multiple application components and external services.
+Skills Demonstrated
+
+This project allowed me to apply and strengthen skills in:
+
+Full-Stack Development
+Backend Development
+REST API Development
+Distributed Systems
+Relational Databases
+Business Logic
+Software Architecture
+Cloud Deployment
+Database Management
+Web Application Development
+Problem Solving
+Team Collaboration
+Academic Context
+
+Developed as part of the Programming 3 course at Pontificia Universidad Católica del Perú (PUCP).
+
+The project focused on applying concepts related to:
+
+Object-Oriented Programming
+Layered Architecture
+Distributed Applications
+Web Services
+Database Management
+Full-Stack Development
+Business Logic Implementation
+Cloud Deployment
 
